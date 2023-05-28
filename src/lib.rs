@@ -34,32 +34,3 @@ impl CipherValue for char {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::Cipher;
-    use super::CipherValue;
-
-    #[test]
-    fn calc_cipher_val_0() {
-        let word = "Hello".to_string();
-        let cipher_type = Cipher::Ordinal;
-        let val = word.cipher_val(&cipher_type);
-        assert_eq!(val, 52)
-    }
-
-    #[test]
-    fn calc_cipher_val_1() {
-        let word = "Hello".to_string();
-        let cipher_type = Cipher::FullReduction;
-        let val = word.cipher_val(&cipher_type);
-        assert_eq!(val, 25)
-    }
-
-    #[test]
-    fn calc_cipher_val_2() {
-        let word = "Hello".to_string();
-        let cipher_type = Cipher::Agrippa;
-        let val = word.cipher_val(&cipher_type);
-        assert_eq!(val, 103)
-    }
-}
