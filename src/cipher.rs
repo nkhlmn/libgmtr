@@ -43,22 +43,3 @@ impl fmt::Display for Cipher {
     }
 }
 
-// pub trait CellDisplay {
-//     fn cell_display(&self) -> String;
-// }
-//
-// impl CellDisplay for Cipher {
-//     fn cell_display(&self) -> String {
-//         match self {
-//             Cipher::OrdinalReverse => "Ordinal (R)".to_string(),
-//             Cipher::FullReduction => "Full Reduction".to_string(),
-//             Cipher::FullReductionReverse => "Full Reduction (R)".to_string(),
-//             Cipher::FrancisBacon => "Francis Bacon".to_string(),
-//             Cipher::FrancisBaconis => "Francis Baconis".to_string(),
-//             Cipher::SumerianReverse => "Sumerian (R)".to_string(),
-//             Cipher::AgrippaOrdinal => "Agrippa Oridinal".to_string(),
-//             Cipher::AgrippaReduction => "Agrippa Reduction".to_string(),
-//             _ => format!("{:?}", self),
-//         }
-//     }
-// }
