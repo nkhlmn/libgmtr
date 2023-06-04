@@ -43,3 +43,16 @@ impl fmt::Display for Cipher {
     }
 }
 
+impl Cipher {
+    /// # Examples
+    /// ```
+    /// use libgmtr::cipher::Cipher;
+    ///
+    /// let word = "foo".to_string();
+    /// let cipher = Cipher::Ordinal;
+    /// assert_eq!(Cipher::Ordinal.val(&word), 36)
+    /// ```
+    pub fn val(&self, word: &String) -> u32 {
+        word.cipher_val(&self)
+    }
+}
