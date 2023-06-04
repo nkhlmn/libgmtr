@@ -4,33 +4,35 @@ pub mod utils;
 use cipher::Cipher;
 use utils::*;
 
-pub trait CipherValue {
-    /// Calculate the value of a given cipher
+pub trait IntoCipherVal {
+    /// Calculate the value for a given cipher
     fn cipher_val(&self, cipher_type: &Cipher) -> u32;
 }
 
-impl CipherValue for String {
+impl IntoCipherVal for String {
     /// # Examples
     /// ```
     /// use libgmtr::{*, cipher::*};
+    ///
     /// let val = "Hello World".to_string().cipher_val(&Cipher::Ordinal);
     /// assert_eq!(val, 124)
     /// ```
     fn cipher_val(&self, cipher_type: &Cipher) -> u32 {
         self.chars()
-            .fold(0, |acc, letter| acc + letter.cipher_val(cipher_type))
+            .fold(0, |acc, char| acc + char.cipher_val(cipher_type))
     }
 }
 
-impl CipherValue for char {
+impl IntoCipherVal for char {
     /// # Examples
     /// ```
-    /// use libgmtr::{*, cipher::*};
+    /// use libgmtr::{IntoCipherVal, cipher::Cipher};
+    ///
     /// let val = 'w'.cipher_val(&Cipher::Ordinal);
     /// assert_eq!(val, 23)
     /// ```
     fn cipher_val(&self, cipher_type: &Cipher) -> u32 {
-        get_letter_value(self, cipher_type)
+        calc_letter_val(self, cipher_type)
     }
 }
 

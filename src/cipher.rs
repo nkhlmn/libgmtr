@@ -1,5 +1,7 @@
 use std::fmt;
 
+use crate::IntoCipherVal;
+
 #[derive(Debug, Eq, PartialEq, Clone)]
 #[allow(dead_code)]
 pub enum Cipher {

@@ -1,6 +1,6 @@
 
 use libgmtr::cipher::Cipher;
-use libgmtr::CipherValue;
+use libgmtr::IntoCipherVal;
 
 #[test]
 fn ordinal_1() {
