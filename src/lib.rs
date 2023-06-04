@@ -34,3 +34,27 @@ impl CipherValue for char {
     }
 }
 
+pub trait IntoNumReduction {
+    fn num_reduction(&self) -> u32;
+}
+
+impl IntoNumReduction for u32 {
+    /// # Examples
+    /// ```
+    /// use libgmtr::IntoNumReduction;
+    ///
+    /// let n: u32 = 351;
+    /// assert_eq!(n.num_reduction(), 9)
+    /// ```
+    fn num_reduction(&self) -> u32 {
+        match self {
+            0..=9 => *self,
+            _ => self
+                .to_string()
+                .chars()
+                .map(|x| x.to_string().parse().unwrap())
+                .fold(0, |acc, x: u32| acc + x)
+                .num_reduction(),
+        }
+    }
+}
