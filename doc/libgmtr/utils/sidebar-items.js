@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":[["get_letter_value",""]]};
+window.SIDEBAR_ITEMS = {"fn":["calc_letter_val"]};

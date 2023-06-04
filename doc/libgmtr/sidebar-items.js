@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":[["cipher",""],["utils",""]],"trait":[["CipherValue",""]]};
+window.SIDEBAR_ITEMS = {"mod":["cipher","utils"],"trait":["IntoCipherVal","IntoNumReduction"]};
